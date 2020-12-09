@@ -55,7 +55,8 @@ function draw() {
   }
 
   // 1% chance of new poison
-  if (random(1) < 0.01) {
+  // cap poison at 30 dots
+  if (random(1) < 0.01 && poison.length < 30) { 
     poison.push(createVector(random(width), random(height)));
   }
 
